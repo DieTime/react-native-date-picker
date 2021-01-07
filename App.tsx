@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 // TODO add README.md
-// TODO add LICENSE.md
 // TODO publish to npm
 // TODO publish example to expo snack
 
