@@ -1,11 +1,5 @@
 <p align="center">
-  <img src="./example/assets/icon.png" width="350"/>
-</p>
-
-<p align="center">
-  <a href="https://snack.expo.io/@checkcompany/063372" target="_blank" rel="noopener noreferrer">
-    Try Expo Snack at snack.expo.io
-  </a>
+  <img src="https://i.ibb.co/HpTJwNX/logo.png" style="margin-bottom: -15px" width="320"/>
 </p>
 
 <p align="center">
