@@ -3,7 +3,7 @@ import {View, Text, ScrollView, StyleSheet, Dimensions, TouchableOpacity} from "
 
 import {LinearGradient} from "expo-linear-gradient";
 
-const DatePicker: React.FC<DatePickerProps> = ({
+const Index: React.FC<DatePickerProps> = ({
     value,
     onChange,
     height,
@@ -99,8 +99,8 @@ const DateBlock: React.FC<DateBlockProps> = ({
     const dHeight: number = Math.round(height / 4);
     const mHeight: number = markHeight || Math.min(dHeight, 65);
 
-    const fadeFilled: string = hex2rgba(fadeColor || '#ffffff', 1);
-    const fadeTransparent: string = hex2rgba(fadeColor || '#ffffff', 0);
+    const fadeFilled: string = hex2rgba(fadeColor || "#ffffff", 1);
+    const fadeTransparent: string = hex2rgba(fadeColor || "#ffffff", 0);
 
     const scrollRef = useRef(null);
     //
@@ -140,7 +140,7 @@ const DateBlock: React.FC<DateBlockProps> = ({
                 scrollEventThrottle={0}
                 onScroll={handleChange}
             >
-                {digits.map((value, index) => {
+                {digits.map((value: number, index: number) => {
                     return (
                         <TouchableOpacity
                             key={index}
@@ -192,9 +192,9 @@ const DateBlock: React.FC<DateBlockProps> = ({
 const hex2rgba = (hex: string, alpha: number) : string => {
     hex = hex.replace("#", "");
 
-    const r: number = parseInt(hex.length == 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16);
-    const g: number = parseInt(hex.length == 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16);
-    const b: number = parseInt(hex.length == 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6), 16);
+    const r: number = parseInt(hex.length === 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16);
+    const g: number = parseInt(hex.length === 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16);
+    const b: number = parseInt(hex.length === 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6), 16);
 
     return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
 }
@@ -255,4 +255,4 @@ export interface DateBlockProps {
     fadeColor?: string;
 }
 
-export default DatePicker;
+export default Index;

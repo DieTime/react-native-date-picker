@@ -1,27 +1,61 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
+  "name": "@dietime/react-native-date-picker",
+  "description": "React Native date picker expo component for iOS, Android and browser. Designed using ScrollView.",
+  "version": "1.0.0",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/src/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "author": "Denis Glazkov <glazzk.off@mail.ru>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "native",
+    "datepicker",
+    "date",
+    "picker",
+    "expo"
+  ],
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "example": "cd example && yarn start",
+    "prepare": "bob build"
   },
-  "dependencies": {
-    "expo": "~40.0.0",
-    "expo-linear-gradient": "^8.4.0",
-    "expo-status-bar": "~1.0.3",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
-    "react-native-web": "~0.13.12"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DieTime/react-native-date-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DieTime/react-native-date-picker/issues"
+  },
+  "homepage": "https://github.com/DieTime/react-native-date-picker#readme",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "expo-linear-gradient": "^8.4.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "@types/react": "~16.9.35",
     "@types/react-dom": "~16.9.8",
     "@types/react-native": "~0.63.2",
-    "typescript": "~4.0.0"
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+    "react-native-builder-bob": "^0.17.1",
+    "typescript": "^4.1.3"
   },
-  "private": true
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  }
 }

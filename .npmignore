@@ -1,0 +1,9 @@
+.git/
+.idea/
+example/
+node_modules/
+
+.gitignore
+.yarn.lock
+
+LICENSE.md

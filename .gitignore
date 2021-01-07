@@ -1,14 +1,8 @@
-node_modules/**/*
-.expo*
+node_modules
+yarn.lock
 .idea
-npm-debug.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.orig.*
-web-build/
 
-# macOS
-.DS_Store
+example/node_modules
+example/.expo
+example/yarn.lock
+example/.idea

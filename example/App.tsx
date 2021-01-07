@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from "react";
+import {StyleSheet, Text, View} from "react-native";
 
 // TODO add README.md
 // TODO publish to npm
 // TODO publish example to expo snack
 
-import DatePicker from "./src";
+import DatePicker from "@dietime/react-native-date-picker";
 
 export default function App() {
     const [date, setDate] = useState<Date | null>();
@@ -43,9 +43,9 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'space-around',
+        backgroundColor: "#fff",
+        alignItems: "center",
+        justifyContent: "space-around",
     },
     date: {
         flexDirection: "row",
