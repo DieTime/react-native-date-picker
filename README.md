@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="https://i.ibb.co/HpTJwNX/logo.png" style="margin-bottom: -15px" width="320"/>
+  <img src="https://i.ibb.co/HpTJwNX/logo.png" style="margin-bottom: -30px" width="320"/>
+</p>
+
+<p align="center">
+    <a href="https://snack.expo.io/@checkcompany/063372">🎯 Try component at snack.expo.io</a>
 </p>
 
 <p align="center">
@@ -12,13 +16,7 @@ React Native customizable date picker component for iOS and Android. Designed us
 devices.
 
 ## 💻 Example
-
-<a href="https://snack.expo.io/@checkcompany/063372" target="_blank" rel="noopener noreferrer">
-    Try component at snack.expo.io
-</a>
-<p>
-<img style="margin-top: 5px" src="https://s8.gifyu.com/images/f6ac35ccb947417533029e8a6396095928822e57.gif" height="350" alt="component-gif-preview"/>
-</p>
+<img style="margin-top: 10px" src="https://s8.gifyu.com/images/f6ac35ccb947417533029e8a6396095928822e57.gif" height="400" alt="component-gif-preview"/>
 
 ## 💬 Installation
 
