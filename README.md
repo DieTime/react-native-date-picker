@@ -13,11 +13,11 @@ devices.
 
 ## 💻 Example
 
-<a src="https://snack.expo.io/@checkcompany/063372" target="_blank" rel="noopener noreferrer">
+<a href="https://snack.expo.io/@checkcompany/063372" target="_blank" rel="noopener noreferrer">
     Try component at snack.expo.io
 </a>
-<p style="margin-top: 20px">
-<img src="https://s8.gifyu.com/images/f6ac35ccb947417533029e8a6396095928822e57.md.gif" height="350"/>
+<p>
+<img style="margin-top: 5px" src="https://s8.gifyu.com/images/f6ac35ccb947417533029e8a6396095928822e57.gif" height="350" alt="component-gif-preview"/>
 </p>
 
 ## 💬 Installation
