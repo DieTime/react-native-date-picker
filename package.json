@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "example": "cd example && yarn start",
-    "prepare": "bob build"
+    "build": "bob build"
   },
   "repository": {
     "type": "git",
