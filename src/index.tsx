@@ -102,14 +102,14 @@ const DateBlock: React.FC<DateBlockProps> = ({
     const fadeTransparent: string = hex2rgba(fadeColor || '#ffffff', 0);
 
     const scrollRef = useRef(null);
-
+    //
     useEffect(() => {
         // @ts-ignore
         scrollRef.current.scrollTo({
             y: dHeight * (value - digits[0]),
             animated: true
         })
-    }, [scrollRef.current, value])
+    }, [scrollRef.current])
 
     const handleChange = ({nativeEvent}: any) => {
         const digit = nativeEvent.contentOffset.y / dHeight + digits[0];
