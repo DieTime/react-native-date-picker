@@ -8,7 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@dietime/react-native-date-picker": "..\\dietime-react-native-date-picker-1.0.0.tgz",
+    "@dietime/react-native-date-picker": "^1.0.0",
     "expo": "~40.0.0",
     "expo-linear-gradient": "^8.4.0",
     "react": "16.13.1",

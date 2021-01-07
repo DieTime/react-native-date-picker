@@ -14,6 +14,7 @@ const Index: React.FC<DatePickerProps> = ({
     endYear,
     markColor,
     markHeight,
+    markWidth,
     fadeColor
 }) => {
     const [days, setDays] = useState<number[]>([]);
@@ -73,6 +74,7 @@ const Index: React.FC<DatePickerProps> = ({
                         textColor={textColor}
                         markColor={markColor}
                         markHeight={markHeight}
+                        markWidth={markWidth}
                         fadeColor={fadeColor}
                         type={["day", "month", "year"][index]}
                         key={index}
@@ -94,10 +96,13 @@ const DateBlock: React.FC<DateBlockProps> = ({
     textColor,
     markColor,
     markHeight,
+    markWidth,
     fadeColor,
 }) => {
     const dHeight: number = Math.round(height / 4);
+
     const mHeight: number = markHeight || Math.min(dHeight, 65);
+    const mWidth: number | string = markWidth || "70%";
 
     const fadeFilled: string = hex2rgba(fadeColor || "#ffffff", 1);
     const fadeTransparent: string = hex2rgba(fadeColor || "#ffffff", 0);
@@ -129,6 +134,7 @@ const DateBlock: React.FC<DateBlockProps> = ({
                         top: (height - mHeight) / 2,
                         backgroundColor: markColor || "rgba(0, 0, 0, 0.05)",
                         height: mHeight,
+                        width: mWidth,
                     }
                 ]}
             />
@@ -219,7 +225,6 @@ const styles = StyleSheet.create({
     },
     mark: {
         position: "absolute",
-        width: "70%",
         borderRadius: 10,
     },
     gradient: {
@@ -238,6 +243,7 @@ export interface DatePickerProps {
     endYear?: number;
     markColor?: string;
     markHeight?: number;
+    markWidth?: number | string;
     fadeColor?: string;
     onChange (value: Date): void;
 }
@@ -252,6 +258,7 @@ export interface DateBlockProps {
     textColor?: string;
     markColor?: string
     markHeight?: number;
+    markWidth?: number | string;
     fadeColor?: string;
 }
 

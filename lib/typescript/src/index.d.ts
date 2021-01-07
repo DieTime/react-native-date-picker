@@ -10,6 +10,7 @@ export interface DatePickerProps {
     endYear?: number;
     markColor?: string;
     markHeight?: number;
+    markWidth?: number | string;
     fadeColor?: string;
     onChange(value: Date): void;
 }
@@ -23,6 +24,7 @@ export interface DateBlockProps {
     textColor?: string;
     markColor?: string;
     markHeight?: number;
+    markWidth?: number | string;
     fadeColor?: string;
 }
 export default Index;

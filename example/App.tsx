@@ -1,10 +1,6 @@
 import React, {useState} from "react";
 import {StyleSheet, Text, View} from "react-native";
 
-// TODO add README.md
-// TODO publish to npm
-// TODO publish example to expo snack
-
 import DatePicker from "@dietime/react-native-date-picker";
 
 export default function App() {
@@ -34,7 +30,7 @@ export default function App() {
                 width={"80%"}
                 fontSize={19}
                 height={170}
-                onChange={(value) => setDate(value)}
+                onChange={(value: Date) => setDate(value)}
             />
         </View>
     );
