@@ -5,6 +5,8 @@ import {StyleSheet, Text, View} from 'react-native';
 // TODO add LICENSE.md
 // TODO publish to npm
 // TODO publish example to expo snack
+// TODO add max year
+// TODO fix bug with recursive changes
 
 import DatePicker from "./src";
 
