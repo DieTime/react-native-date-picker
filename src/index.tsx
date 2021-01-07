@@ -11,6 +11,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
     fontSize,
     textColor,
     startYear,
+    endYear,
     markColor,
     markHeight,
     fadeColor
@@ -20,7 +21,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
     const [years, setYears] = useState<number[]>([]);
 
     useEffect(() => {
-        const end = new Date().getFullYear();
+        const end = endYear || new Date().getFullYear();
         const start = !startYear || startYear > end ? (end - 100) : startYear;
 
         setDays([...Array(31)].map((_, index) => index + 1));
@@ -234,6 +235,7 @@ export interface DatePickerProps {
     fontSize?: number;
     textColor?: string;
     startYear?: number;
+    endYear?: number;
     markColor?: string;
     markHeight?: number;
     fadeColor?: string;
