@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Runs%20with%20Expo-000.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)" alt="works with expo"/>
+    <img src="https://img.shields.io/badge/Runs%20with%20Expo-000.svg?style=flat&logo=EXPO&labelColor=ffffff&logoColor=000" alt="npm type definitions"/>
     <img src="https://img.shields.io/npm/types/@dietime/react-native-date-picker" alt="npm type definitions"/>
     <img src="https://img.shields.io/bundlephobia/min/@dietime/react-native-date-picker" alt="npm bundle size"/>
 </p>
