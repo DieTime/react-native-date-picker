@@ -63,6 +63,7 @@ devices.
                 <DatePicker
                     value={date}
                     onChange={(value) => setDate(value)}
+                    format="yyyy-mm-dd"
                 />
             </View>
         );
