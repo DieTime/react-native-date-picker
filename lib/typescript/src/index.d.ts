@@ -1,5 +1,5 @@
 import React from "react";
-declare const Index: React.FC<DatePickerProps>;
+declare const DatePicker: React.FC<DatePickerProps>;
 export interface DatePickerProps {
     value: Date | null | undefined;
     height?: number;
@@ -12,10 +12,10 @@ export interface DatePickerProps {
     markHeight?: number;
     markWidth?: number | string;
     fadeColor?: string;
+    format?: string;
     onChange(value: Date): void;
 }
 export interface DateBlockProps {
-    onChange(type: string, digit: number): void;
     digits: number[];
     value: number;
     type: string;
@@ -26,5 +26,6 @@ export interface DateBlockProps {
     markHeight?: number;
     markWidth?: number | string;
     fadeColor?: string;
+    onChange(type: string, digit: number): void;
 }
-export default Index;
+export default DatePicker;

@@ -76,15 +76,16 @@ devices.
 | value      | ✅        | Date or null or undefined | Initial date for component                                    |
 | onChange   | ✅        | (value: Date) : void      | Callback on date change event                                 |
 | height     | ⛔        | number                    | Custom component height                                       |
-| width      | ⛔        | number or string          | Custom component width such as 100 or '50%'                   |
+| width      | ⛔        | number or string          | Custom component width such as `100` or `'50%'`                   |
 | fontSize   | ⛔        | number                    | Custom digits font size                                       |
 | textColor  | ⛔        | string                    | Custom digits text color such as hex, rgb or rgba             |
 | endYear    | ⛔        | number                    | Max year in component, default is current year                |
-| startYear  | ⛔        | number                    | Min year in component, default is (endYear - 100)             |
-| markColor  | ⛔        | string                    | Custom middle mark color such as hex, rgb or rgba             |
+| startYear  | ⛔        | number                    | Min year in component, default is `endYear - 100`             |
+| markColor  | ⛔        | string                    | Custom middle mark color such as `hex`, `rgb` or `rgba`             |
 | markHeight | ⛔        | number                    | Custom height of middle mark                                  |
-| markWidth  | ⛔        | number or string          | Custom width of middle mark such as 100 or '50%'              |
-| fadeColor  | ⛔        | string                    | Custom color for top and bottom fade effect (only hex colors) |
+| markWidth  | ⛔        | number or string          | Custom width of middle mark such as `100` or `'50%'`              |
+| fadeColor  | ⛔        | string                    | Custom color for top and bottom fade effect `only hex colors!` |
+| format     | ⛔        | string                    | Custom picker format like reshuffle of `yyyy`, `mm`, `dd`. Example: `'yyyy-mm-dd'` or `'dd-mm-yyyy'` and other |
 
 ## 📂 Project Layout
 

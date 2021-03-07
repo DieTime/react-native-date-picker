@@ -31,6 +31,7 @@ export default function App() {
                 fontSize={19}
                 height={170}
                 onChange={(value: Date) => setDate(value)}
+                format={"yyyy-mm-dd"}
             />
         </View>
     );

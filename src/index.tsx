@@ -3,7 +3,7 @@ import {View, Text, ScrollView, StyleSheet, Dimensions, TouchableOpacity} from "
 
 import {LinearGradient} from "expo-linear-gradient";
 
-const Index: React.FC<DatePickerProps> = ({
+const DatePicker: React.FC<DatePickerProps> = ({
     value,
     onChange,
     height,
@@ -15,7 +15,8 @@ const Index: React.FC<DatePickerProps> = ({
     markColor,
     markHeight,
     markWidth,
-    fadeColor
+    fadeColor,
+    format
 }) => {
     const [days, setDays] = useState<number[]>([]);
     const [months, setMonths] = useState<number[]>([]);
@@ -25,18 +26,22 @@ const Index: React.FC<DatePickerProps> = ({
         const end = endYear || new Date().getFullYear();
         const start = !startYear || startYear > end ? (end - 100) : startYear;
 
-        setDays([...Array(31)].map((_, index) => index + 1));
-        setMonths([...Array(12)].map((_, index) => index + 1));
-        setYears([...Array(end - start + 1)].map((_, index) => start + index));
+        const _days = [...Array(31)].map((_, index) => index + 1);
+        const _months = [...Array(12)].map((_, index) => index + 1);
+        const _years = [...Array(end - start + 1)].map((_, index) => start + index);
+
+        setDays(_days);
+        setMonths(_months);
+        setYears(_years);
     }, []);
 
     const pickerHeight: number = Math.round(height || Dimensions.get("window").height / 3.5);
     const pickerWidth: number | string = width || "100%";
+
     const unexpectedDate: Date = new Date(years[0], 0, 1);
+    const date = new Date(value || unexpectedDate);
 
-    const changeHandle = (type: string, digit: number) : void => {
-        const date = new Date(value || unexpectedDate);
-
+    const changeHandle = (type: string, digit: number): void => {
         switch (type) {
             case "day":
                 date.setDate(digit);
@@ -52,36 +57,48 @@ const Index: React.FC<DatePickerProps> = ({
         onChange(date);
     }
 
-    return (
-        <View style={[styles.picker, { height: pickerHeight, width: pickerWidth }]}>
-        {
-            [days, months, years].map((el, index) => {
-                const date = new Date(value || unexpectedDate);
+    const getOrder = () => {
+        return (format || "dd-mm-yyyy").split("-").map((type, index) => {
+            switch (type) {
+                case "dd":
+                    return {name: "day", digits: days, value: date.getDate()};
+                case "mm":
+                    return {name: "month", digits: months, value: date.getMonth() + 1};
+                case "yyyy":
+                    return {name: "year", digits: years, value: date.getFullYear()};
+                default:
+                    console.warn(`Invalid date picker format prop: found "${type}" in ${format}. Please read documentation!`)
+                    return {
+                        name: ["day", "month", "year"][index],
+                        digits: [days, months, years][index],
+                        value: [date.getDate(), date.getMonth() + 1, date.getFullYear()][index]
+                    };
+            }
+        })
+    }
 
-                return (
-                    <DateBlock
-                        digits={el}
-                        value={
-                            index === 0
-                            ? date.getDate()
-                            : index === 1
-                            ? date.getMonth() + 1
-                            : date.getFullYear()
-                        }
-                        onChange={changeHandle}
-                        height={pickerHeight}
-                        fontSize={fontSize}
-                        textColor={textColor}
-                        markColor={markColor}
-                        markHeight={markHeight}
-                        markWidth={markWidth}
-                        fadeColor={fadeColor}
-                        type={["day", "month", "year"][index]}
-                        key={index}
-                    />
-                )
-            })
-        }
+    return (
+        <View style={[styles.picker, {height: pickerHeight, width: pickerWidth}]}>
+            {
+                getOrder().map((el, index) => {
+                    return (
+                        <DateBlock
+                            digits={el.digits}
+                            value={el.value}
+                            onChange={changeHandle}
+                            height={pickerHeight}
+                            fontSize={fontSize}
+                            textColor={textColor}
+                            markColor={markColor}
+                            markHeight={markHeight}
+                            markWidth={markWidth}
+                            fadeColor={fadeColor}
+                            type={el.name}
+                            key={index}
+                        />
+                    )
+                })
+            }
         </View>
     );
 };
@@ -108,7 +125,6 @@ const DateBlock: React.FC<DateBlockProps> = ({
     const fadeTransparent: string = hex2rgba(fadeColor || "#ffffff", 0);
 
     const scrollRef = useRef(null);
-    //
     useEffect(() => {
         // @ts-ignore
         scrollRef.current.scrollTo({
@@ -195,7 +211,7 @@ const DateBlock: React.FC<DateBlockProps> = ({
     )
 };
 
-const hex2rgba = (hex: string, alpha: number) : string => {
+const hex2rgba = (hex: string, alpha: number): string => {
     hex = hex.replace("#", "");
 
     const r: number = parseInt(hex.length === 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16);
@@ -245,11 +261,12 @@ export interface DatePickerProps {
     markHeight?: number;
     markWidth?: number | string;
     fadeColor?: string;
-    onChange (value: Date): void;
+    format?: string;
+
+    onChange(value: Date): void;
 }
 
 export interface DateBlockProps {
-    onChange(type: string, digit: number): void;
     digits: number[];
     value: number;
     type: string;
@@ -260,6 +277,8 @@ export interface DateBlockProps {
     markHeight?: number;
     markWidth?: number | string;
     fadeColor?: string;
+
+    onChange(type: string, digit: number): void;
 }
 
-export default Index;
+export default DatePicker;
