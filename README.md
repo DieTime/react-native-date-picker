@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.ibb.co/HpTJwNX/logo.png" style="margin-bottom: -30px" width="320"/>
+  <img src="https://github.com/DieTime/react-native-date-picker/raw/master/assets/logo.png" style="margin-bottom: -30px" width="320"/>
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@ React Native customizable date picker component for iOS and Android. Designed us
 devices.
 
 ## 💻 Example
-<img style="margin-top: 10px" src="https://s8.gifyu.com/images/f6ac35ccb947417533029e8a6396095928822e57.gif" height="400" alt="component-gif-preview"/>
+<img style="margin-top: 10px" src="https://github.com/DieTime/react-native-date-picker/raw/master/assets/example.gif" height="400" alt="component-gif-preview"/>
 
 ## 💬 Installation
 
