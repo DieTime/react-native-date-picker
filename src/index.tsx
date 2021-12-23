@@ -134,7 +134,8 @@ const DateBlock: React.FC<DateBlockProps> = ({
     }, [scrollRef.current])
 
     const handleChange = ({nativeEvent}: any) => {
-        const digit = nativeEvent.contentOffset.y / dHeight + digits[0];
+        let digit = nativeEvent.contentOffset.y / dHeight + digits[0];
+        digit = parseInt(digit.toFixed(0), 10);
 
         if (Number.isInteger(digit)) {
             onChange(type, digit);
