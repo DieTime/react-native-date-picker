@@ -121,24 +121,24 @@ const DateBlock: React.FC<DateBlockProps> = ({
     const mHeight: number = markHeight || Math.min(dHeight, 65);
     const mWidth: number | string = markWidth || "70%";
 
+    const offsets = digits.map((_: number, index: number) => index * dHeight)
+
     const fadeFilled: string = hex2rgba(fadeColor || "#ffffff", 1);
     const fadeTransparent: string = hex2rgba(fadeColor || "#ffffff", 0);
 
-    const scrollRef = useRef(null);
+    const scrollRef = useRef<any>(null);
+
+    const snapScrollToIndex = (index: number) => {
+        scrollRef?.current?.scrollTo({y: dHeight * index, animated: true})
+    }
+
     useEffect(() => {
-        // @ts-ignore
-        scrollRef.current.scrollTo({
-            y: dHeight * (value - digits[0]),
-            animated: true
-        })
+        snapScrollToIndex(value - digits[0])
     }, [scrollRef.current])
 
-    const handleChange = ({nativeEvent}: any) => {
-        const digit = nativeEvent.contentOffset.y / dHeight + digits[0];
-
-        if (Number.isInteger(digit)) {
-            onChange(type, digit);
-        }
+    const handleMomentumScrollEnd = ({nativeEvent}: any) => {
+        const digit = Math.round(nativeEvent.contentOffset.y / dHeight + digits[0]);
+        onChange(type, digit);
     }
 
     return (
@@ -157,21 +157,18 @@ const DateBlock: React.FC<DateBlockProps> = ({
             <ScrollView
                 ref={scrollRef}
                 style={styles.scroll}
-                snapToInterval={dHeight}
+                snapToOffsets={offsets}
                 showsVerticalScrollIndicator={false}
                 scrollEventThrottle={0}
-                onScroll={handleChange}
+                onMomentumScrollEnd={handleMomentumScrollEnd}
             >
                 {digits.map((value: number, index: number) => {
                     return (
                         <TouchableOpacity
                             key={index}
                             onPress={() => {
-                                // @ts-ignore
-                                scrollRef.current.scrollTo({
-                                    y: dHeight * index,
-                                    animated: true
-                                })
+                                onChange(type, digits[index])
+                                snapScrollToIndex(index)
                             }}
                         >
                             <Text
