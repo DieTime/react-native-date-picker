@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/DieTime/react-native-date-picker#readme",
   "peerDependencies": {
-    "expo-linear-gradient": "^8.4.0",
+    "expo-linear-gradient": "*",
     "react": "*",
     "react-native": "*"
   },
