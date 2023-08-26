@@ -1,7 +1,7 @@
 {
   "name": "@dietime/react-native-date-picker",
   "description": "React Native date picker expo component for iOS, Android and browser. Designed using ScrollView.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
