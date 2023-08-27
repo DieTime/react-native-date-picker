@@ -20,55 +20,45 @@ devices.
 
 ## 💬 Installation
 
-1. *Add dependencies to the project*
+### 1. Add dependency to the project
 
-    ```bash
-    yarn add @dietime/react-native-date-picker
-    
-    npm install @dietime/react-native-date-picker --save
-    ```
+```bash
+$ yarn add @dietime/react-native-date-picker
+```
 
-2. *Install additional dependencies*
+```bash
+$ npm install @dietime/react-native-date-picker --save
+```
 
-    ```bash
-    yarn add expo-linear-gradient
-    
-    npm install expo-linear-gradient --save
-    ```
+### 2. Import dependency
 
-3. *Then, import with ...*
-
-    ```js
-    import DatePicker from '@dietime/react-native-date-picker';
-    ```
-
-4. *If you are not using Expo*
-   > You should also follow these additional [installation instructions](https://github.com/expo/expo/tree/master/packages/expo-linear-gradient#installation-in-bare-react-native-projects).
+```js
+import DatePicker from '@dietime/react-native-date-picker';
+```
 
 ## 👩‍💻 Usage
 
-- *Simple code example*
-    ```javascript
-    import React, {useState} from "react";
-    import {Text, View} from "react-native";
-    
-    import DatePicker from "@dietime/react-native-date-picker";
-    
-    export default function App() {
-        const [date, setDate] = useState();
-    
-        return (
-            <View>
-                <Text>{date ? date.toDateString() : "Select date..."}</Text>
-                <DatePicker
-                    value={date}
-                    onChange={(value) => setDate(value)}
-                    format="yyyy-mm-dd"
-                />
-            </View>
-        );
-    }
-    ```
+```javascript
+import React, {useState} from "react";
+import {Text, View} from "react-native";
+
+import DatePicker from "@dietime/react-native-date-picker";
+
+export default function App() {
+    const [date, setDate] = useState();
+
+    return (
+        <View>
+            <Text>{date ? date.toDateString() : "Select date..."}</Text>
+            <DatePicker
+                value={date}
+                onChange={(value) => setDate(value)}
+                format="yyyy-mm-dd"
+            />
+        </View>
+    );
+}
+```
 
 ## 📚 Documentation
 
@@ -88,24 +78,12 @@ devices.
 | fadeColor  | ⛔        | string                    | Custom color for top and bottom fade effect `only hex colors!` |
 | format     | ⛔        | string                    | Custom picker format like reshuffle of `yyyy`, `mm`, `dd`. Example: `'yyyy-mm-dd'` or `'dd-mm-yyyy'` and other |
 
-## 📂 Project Layout
-
-- [`example`](/example) *Simple project with date picker. It is presented on gif.*
-- [`src`](/src) *Source code of date picker.*
-- [`lib`](/lib) *Shared packages.*
-    - [`commonjs`](/lib/commonjs) *Package built as common js library.*
-    - [`module`](/lib/module) *Package built as module.*
-    - [`typescript`](/lib/typescript) *Built files for static typing.*
-
 ## 📃 License
 
-Source code is made available under the [MIT license](LICENSE.md). Some dependencies may be licensed differently.
+Copyright 2023 Denis Glazkov glazzk.off@mail.ru
 
-## ☕ Support
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-You can support me so that there will be more good open source projects in the future
-<p align="center" style="padding: 10px 0 20px 0">
-  <a href="https://www.buymeacoffee.com/glazzkoff" target="_blank">
-    <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="50" width="220">
-  </a>
-</p>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
